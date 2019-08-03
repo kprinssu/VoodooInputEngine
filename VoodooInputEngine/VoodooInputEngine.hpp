@@ -26,6 +26,10 @@ class EXPORT VoodooInputEngine : public VoodooI2CMultitouchEngine {
     IOService* voodooInputInstance;
 public:
     UInt8 getScore() override;
+    
+    /* Event handler for VoodooI2C touch events
+     * VoodooI2C touch data is converted to VoodooInput messages and then sent to VoodooInput
+     */
     MultitouchReturn handleInterruptReport(VoodooI2CMultitouchEvent event, AbsoluteTime timestamp) override;
 
     bool start(IOService* provider) override;

@@ -18,6 +18,43 @@ UInt8 VoodooInputEngine::getScore() {
 
 MultitouchReturn VoodooInputEngine::handleInterruptReport(VoodooI2CMultitouchEvent event, AbsoluteTime timestamp) {
     
+    if (!voodooInputInstance) {
+        return MultitouchReturnContinue;
+    }
+    
+    VoodooInputEvent message;
+    
+    message.timestamp = timestamp;
+    message.contact_count = event.contact_count;
+    
+    for(int i = 0; i < event.contact_count; i++) {
+        VoodooI2CDigitiserTransducer* transducer = (VoodooI2CDigitiserTransducer*) event.transducers->getObject(i);
+        
+        VoodooInputTransducer* inputTransducer = &message.transducers[i];
+        
+        if (!transducer) {
+            continue;
+        }
+        
+        inputTransducer->id = transducer->id;
+        inputTransducer->secondaryId = transducer->secondary_id;
+        
+        inputTransducer->type = VoodooInputTransducerType::FINGER;
+        
+        inputTransducer->isValid = transducer->is_valid;
+        inputTransducer->isTransducerActive = transducer->tip_switch.value();
+        inputTransducer->isPhysicalButtonDown = transducer->physical_button.value();
+        
+        inputTransducer->currentCordinates.x = transducer->coordinates.x.value();
+        inputTransducer->previousCoordinates.x = transducer->coordinates.x.last.value;
+        
+        inputTransducer->currentCordinates.y = transducer->coordinates.y.value();
+        inputTransducer->previousCoordinates.y = transducer->coordinates.y.last.value;
+        
+        inputTransducer->currentCordinates.pressure = transducer->tip_pressure.value();
+    }
+    
+    super::messageClient(kIOMessageVoodooInputMessage, voodooInputInstance, &message, sizeof(VoodooInputEvent));
     return MultitouchReturnBreak;
 }
 
@@ -39,8 +76,8 @@ bool VoodooInputEngine::start(IOService *provider) {
     setProperty(VOODOO_INPUT_LOGICAL_MAX_X_KEY, parentProvider->logical_max_x, 32);
     setProperty(VOODOO_INPUT_LOGICAL_MAX_Y_KEY, parentProvider->logical_max_y, 32);
     
-    setProperty(VOODOO_INPUT_PHYSICAL_MAX_X_KEY, parentProvider->physical_max_x, 32)VOODOO_INPUT_PHYSICAL_MAX_Y_KEY
-    setProperty(VOODOO_INPUT_PHYSICAL_MAX_Y_KEY, parentProvider->physical_max_y, 32);;
+    setProperty(VOODOO_INPUT_PHYSICAL_MAX_X_KEY, parentProvider->physical_max_x, 32);
+    setProperty(VOODOO_INPUT_PHYSICAL_MAX_Y_KEY, parentProvider->physical_max_y, 32);
     
     setProperty(kIOFBTransformKey, 0ull, 32);
     setProperty("VoodooInputSupported", kOSBooleanTrue);
