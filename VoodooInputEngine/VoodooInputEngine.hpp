@@ -31,10 +31,10 @@ public:
      * VoodooI2C touch data is converted to VoodooInput messages and then sent to VoodooInput
      */
     MultitouchReturn handleInterruptReport(VoodooI2CMultitouchEvent event, AbsoluteTime timestamp) override;
-
+    
     bool start(IOService* provider) override;
     void stop(IOService* provider) override;
-
+    
     bool handleOpen(IOService *forClient, IOOptionBits options, void *arg) override;
     void handleClose(IOService *forClient, IOOptionBits options) override;
 };

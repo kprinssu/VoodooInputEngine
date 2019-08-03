@@ -86,7 +86,7 @@ bool VoodooInputEngine::start(IOService *provider) {
 }
 
 bool VoodooInputEngine::handleOpen(IOService *forClient, IOOptionBits options, void *arg) {
-    if (forClient && forClient->getProperty(VOOODOO_INPUT_IDENTIFIER)) {
+    if (forClient && forClient->getProperty(VOODOO_INPUT_IDENTIFIER)) {
         voodooInputInstance = forClient;
         voodooInputInstance->retain();
         
@@ -94,6 +94,10 @@ bool VoodooInputEngine::handleOpen(IOService *forClient, IOOptionBits options, v
     }
     
     return super::handleOpen(forClient, options, arg);
+}
+
+void VoodooInputEngine::stop(IOService *provider) {
+    super::stop(provider);
 }
 
 void VoodooInputEngine::handleClose(IOService *forClient, IOOptionBits options) {
