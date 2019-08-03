@@ -7,13 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7B5D6A0622F6238F0095DFB2 /* VoodooInputEngine.c in Sources */ = {isa = PBXBuildFile; fileRef = 7B5D6A0522F6238F0095DFB2 /* VoodooInputEngine.c */; };
+		7B5D6A1122F62FB50095DFB2 /* VoodooInputEngine.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 7B5D6A0F22F62FB50095DFB2 /* VoodooInputEngine.hpp */; };
+		7B5D6A1222F62FB50095DFB2 /* VoodooInputEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7B5D6A1022F62FB50095DFB2 /* VoodooInputEngine.cpp */; };
+		7B5D6A1922F631140095DFB2 /* VoodooI2CMultitouchInterface.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 7B5D6A1422F631140095DFB2 /* VoodooI2CMultitouchInterface.hpp */; };
+		7B5D6A1A22F631140095DFB2 /* VoodooI2CDigitiserTransducer.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 7B5D6A1522F631140095DFB2 /* VoodooI2CDigitiserTransducer.hpp */; };
+		7B5D6A1B22F631140095DFB2 /* MultitouchHelpers.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 7B5D6A1622F631140095DFB2 /* MultitouchHelpers.hpp */; };
+		7B5D6A1C22F631140095DFB2 /* VoodooI2CMultitouchEngine.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 7B5D6A1722F631140095DFB2 /* VoodooI2CMultitouchEngine.hpp */; };
+		7B5D6A1D22F631140095DFB2 /* VoodooI2CDigitiserStylus.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 7B5D6A1822F631140095DFB2 /* VoodooI2CDigitiserStylus.hpp */; };
+		7B5D6A2322F632DF0095DFB2 /* VoodooInputMessages.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B5D6A2022F632DF0095DFB2 /* VoodooInputMessages.h */; };
+		7B5D6A2422F632DF0095DFB2 /* VoodooInputTransducer.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B5D6A2122F632DF0095DFB2 /* VoodooInputTransducer.h */; };
+		7B5D6A2522F632DF0095DFB2 /* VoodooInputEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B5D6A2222F632DF0095DFB2 /* VoodooInputEvent.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7B5D6A0222F6238F0095DFB2 /* VoodooInputEngine.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VoodooInputEngine.kext; sourceTree = BUILT_PRODUCTS_DIR; };
-		7B5D6A0522F6238F0095DFB2 /* VoodooInputEngine.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = VoodooInputEngine.c; sourceTree = "<group>"; };
 		7B5D6A0722F6238F0095DFB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7B5D6A0F22F62FB50095DFB2 /* VoodooInputEngine.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = VoodooInputEngine.hpp; sourceTree = "<group>"; };
+		7B5D6A1022F62FB50095DFB2 /* VoodooInputEngine.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = VoodooInputEngine.cpp; sourceTree = "<group>"; };
+		7B5D6A1422F631140095DFB2 /* VoodooI2CMultitouchInterface.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = VoodooI2CMultitouchInterface.hpp; sourceTree = "<group>"; };
+		7B5D6A1522F631140095DFB2 /* VoodooI2CDigitiserTransducer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = VoodooI2CDigitiserTransducer.hpp; sourceTree = "<group>"; };
+		7B5D6A1622F631140095DFB2 /* MultitouchHelpers.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = MultitouchHelpers.hpp; sourceTree = "<group>"; };
+		7B5D6A1722F631140095DFB2 /* VoodooI2CMultitouchEngine.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = VoodooI2CMultitouchEngine.hpp; sourceTree = "<group>"; };
+		7B5D6A1822F631140095DFB2 /* VoodooI2CDigitiserStylus.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = VoodooI2CDigitiserStylus.hpp; sourceTree = "<group>"; };
+		7B5D6A2022F632DF0095DFB2 /* VoodooInputMessages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoodooInputMessages.h; sourceTree = "<group>"; };
+		7B5D6A2122F632DF0095DFB2 /* VoodooInputTransducer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoodooInputTransducer.h; sourceTree = "<group>"; };
+		7B5D6A2222F632DF0095DFB2 /* VoodooInputEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoodooInputEvent.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,10 +64,43 @@
 		7B5D6A0422F6238F0095DFB2 /* VoodooInputEngine */ = {
 			isa = PBXGroup;
 			children = (
-				7B5D6A0522F6238F0095DFB2 /* VoodooInputEngine.c */,
+				7B5D6A1322F62FBE0095DFB2 /* Headers */,
+				7B5D6A0F22F62FB50095DFB2 /* VoodooInputEngine.hpp */,
+				7B5D6A1022F62FB50095DFB2 /* VoodooInputEngine.cpp */,
 				7B5D6A0722F6238F0095DFB2 /* Info.plist */,
 			);
 			path = VoodooInputEngine;
+			sourceTree = "<group>";
+		};
+		7B5D6A1322F62FBE0095DFB2 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				7B5D6A1F22F632BA0095DFB2 /* VoodooInput */,
+				7B5D6A1E22F632AD0095DFB2 /* VoodooI2C */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
+		7B5D6A1E22F632AD0095DFB2 /* VoodooI2C */ = {
+			isa = PBXGroup;
+			children = (
+				7B5D6A1622F631140095DFB2 /* MultitouchHelpers.hpp */,
+				7B5D6A1822F631140095DFB2 /* VoodooI2CDigitiserStylus.hpp */,
+				7B5D6A1522F631140095DFB2 /* VoodooI2CDigitiserTransducer.hpp */,
+				7B5D6A1722F631140095DFB2 /* VoodooI2CMultitouchEngine.hpp */,
+				7B5D6A1422F631140095DFB2 /* VoodooI2CMultitouchInterface.hpp */,
+			);
+			path = VoodooI2C;
+			sourceTree = "<group>";
+		};
+		7B5D6A1F22F632BA0095DFB2 /* VoodooInput */ = {
+			isa = PBXGroup;
+			children = (
+				7B5D6A2222F632DF0095DFB2 /* VoodooInputEvent.h */,
+				7B5D6A2022F632DF0095DFB2 /* VoodooInputMessages.h */,
+				7B5D6A2122F632DF0095DFB2 /* VoodooInputTransducer.h */,
+			);
+			path = VoodooInput;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,6 +110,15 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B5D6A1D22F631140095DFB2 /* VoodooI2CDigitiserStylus.hpp in Headers */,
+				7B5D6A2522F632DF0095DFB2 /* VoodooInputEvent.h in Headers */,
+				7B5D6A1B22F631140095DFB2 /* MultitouchHelpers.hpp in Headers */,
+				7B5D6A1C22F631140095DFB2 /* VoodooI2CMultitouchEngine.hpp in Headers */,
+				7B5D6A1922F631140095DFB2 /* VoodooI2CMultitouchInterface.hpp in Headers */,
+				7B5D6A2322F632DF0095DFB2 /* VoodooInputMessages.h in Headers */,
+				7B5D6A1A22F631140095DFB2 /* VoodooI2CDigitiserTransducer.hpp in Headers */,
+				7B5D6A2422F632DF0095DFB2 /* VoodooInputTransducer.h in Headers */,
+				7B5D6A1122F62FB50095DFB2 /* VoodooInputEngine.hpp in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,7 +189,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B5D6A0622F6238F0095DFB2 /* VoodooInputEngine.c in Sources */,
+				7B5D6A1222F62FB50095DFB2 /* VoodooInputEngine.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
