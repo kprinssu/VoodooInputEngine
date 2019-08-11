@@ -45,13 +45,13 @@ MultitouchReturn VoodooInputEngine::handleInterruptReport(VoodooI2CMultitouchEve
         inputTransducer->isTransducerActive = transducer->tip_switch.value();
         inputTransducer->isPhysicalButtonDown = transducer->physical_button.value();
         
-        inputTransducer->currentCordinates.x = transducer->coordinates.x.value();
+        inputTransducer->currentCoordinates.x = transducer->coordinates.x.value();
         inputTransducer->previousCoordinates.x = transducer->coordinates.x.last.value;
         
-        inputTransducer->currentCordinates.y = transducer->coordinates.y.value();
+        inputTransducer->currentCoordinates.y = transducer->coordinates.y.value();
         inputTransducer->previousCoordinates.y = transducer->coordinates.y.last.value;
         
-        inputTransducer->currentCordinates.pressure = transducer->tip_pressure.value();
+        inputTransducer->currentCoordinates.pressure = transducer->tip_pressure.value();
     }
     
     super::messageClient(kIOMessageVoodooInputMessage, voodooInputInstance, &message, sizeof(VoodooInputEvent));

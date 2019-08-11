@@ -25,14 +25,14 @@ class EXPORT VoodooI2CMultitouchEngine : public IOService {
  public:
     VoodooI2CMultitouchInterface* interface;
 
-    /* Intended to be overwritten by an inherited class to set the engine's priority
+    /* Intended to be overridden by an inherited class to set the engine's priority
      *
      * @return The engine's score
      */
 
     virtual UInt8 getScore();
 
-    /* Intended to be overwritten by an inherited class to handle a multitouch event
+    /* Intended to be overridden by an inherited class to handle a multitouch event
      * @event The event to be handled
      * @timestamp The event's timestamp
      *
@@ -46,12 +46,12 @@ class EXPORT VoodooI2CMultitouchEngine : public IOService {
     /* Sets up the multitouch engine
      * @provider The <VoodooI2CMultitouchInterface> that we have matched against
      *
-     * This function is intended to be overwritten by an inherited class but should still be called at the beginning of the overwritten
+     * This function is intended to be overridden by an inherited class but should still be called at the beginning of the overridden
      * function.
      * @return *true* upon successful start, *false* otherwise
      */
 
-    virtual bool start(IOService* provider);
+    virtual bool start(IOService* provider) override;
 };
 
 
