@@ -17,23 +17,24 @@ enum VoodooInputTransducerType {
 struct TouchCoordinates {
     UInt32 x;
     UInt32 y;
-    UInt32 pressure;
+    UInt8 pressure;
+    UInt8 width;
 };
 
 struct VoodooInputTransducer {
     AbsoluteTime timestamp;
-    
+
     UInt32 id;
     UInt32 secondaryId;
     VoodooInputTransducerType type;
-    
+
     bool isValid;
     bool isPhysicalButtonDown;
     bool isTransducerActive;
-    
+
     TouchCoordinates currentCoordinates;
     TouchCoordinates previousCoordinates;
-    
+
     UInt32 maxPressure;
 };
 

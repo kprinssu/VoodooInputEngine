@@ -50,8 +50,13 @@ MultitouchReturn VoodooInputEngine::handleInterruptReport(VoodooI2CMultitouchEve
         
         inputTransducer->currentCoordinates.y = transducer->coordinates.y.value();
         inputTransducer->previousCoordinates.y = transducer->coordinates.y.last.value;
-        
+
+        // TODO: does VoodooI2C know width(s)? how does it measure pressure?
+        inputTransducer->currentCoordinates.width = transducer->tip_pressure.value() / 2;
+        inputTransducer->previousCoordinates.width = transducer->tip_pressure.last.value / 2;
+
         inputTransducer->currentCoordinates.pressure = transducer->tip_pressure.value();
+        inputTransducer->previousCoordinates.pressure = transducer->tip_pressure.last.value;
     }
     
     super::messageClient(kIOMessageVoodooInputMessage, voodooInputInstance, &message, sizeof(VoodooInputEvent));
@@ -76,8 +81,8 @@ bool VoodooInputEngine::start(IOService *provider) {
     setProperty(VOODOO_INPUT_LOGICAL_MAX_X_KEY, parentProvider->logical_max_x, 32);
     setProperty(VOODOO_INPUT_LOGICAL_MAX_Y_KEY, parentProvider->logical_max_y, 32);
     
-    setProperty(VOODOO_INPUT_PHYSICAL_MAX_X_KEY, parentProvider->physical_max_x, 32);
-    setProperty(VOODOO_INPUT_PHYSICAL_MAX_Y_KEY, parentProvider->physical_max_y, 32);
+    setProperty(VOODOO_INPUT_PHYSICAL_MAX_X_KEY, parentProvider->physical_max_x * 10, 32);
+    setProperty(VOODOO_INPUT_PHYSICAL_MAX_Y_KEY, parentProvider->physical_max_y * 10, 32);
     
     setProperty(kIOFBTransformKey, 0ull, 32);
     setProperty("VoodooInputSupported", kOSBooleanTrue);
